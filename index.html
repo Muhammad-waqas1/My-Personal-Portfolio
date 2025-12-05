@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Waqas - Software Engineer & Freelance Developer</title>
+    <meta name="description"
+        content="Portfolio of Muhammad Waqas - Software Engineer specializing in Python, Django, and Full-Stack Web Development">
+
+    <!-- Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicon/site.webmanifest">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-dark: #0B0B12;
+            --bg-dark-secondary: #130924;
+            --accent-olive: #556B2F;
+            --accent-beige: #DCCA9A;
+            --accent-glow: #9AE66E;
+            --text-primary: #E8E8E8;
+            --text-secondary: #B0B0B0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-dark-secondary) 100%);
+            color: var(--text-primary);
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+        }
+
+        /* Navbar */
+        .navbar-custom {
+            background: rgba(11, 11, 18, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(154, 230, 110, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .navbar-custom.scrolled {
+            box-shadow: 0 4px 20px rgba(154, 230, 110, 0.15);
+        }
+
+        .nav-link {
+            color: var(--text-primary) !important;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--accent-glow) !important;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-glow);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-gradient {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(154, 230, 110, 0.15) 0%, transparent 70%);
+            filter: blur(60px);
+            animation: float 8s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translate(0, 0);
+            }
+
+            50% {
+                transform: translate(50px, 50px);
+            }
+        }
+
+        .profile-image {
+            width: 320px;
+            height: 320px;
+            border-radius: 20px;
+            object-fit: cover;
+            border: 3px solid var(--accent-olive);
+            box-shadow: 0 0 40px rgba(154, 230, 110, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-image:hover {
+            transform: scale(1.05);
+        }
+
+        .glow-text {
+            text-shadow: 0 0 20px rgba(154, 230, 110, 0.5);
+        }
+
+        .btn-custom-primary {
+            background: linear-gradient(135deg, var(--accent-olive) 0%, var(--accent-glow) 100%);
+            color: white;
+            border: none;
+            padding: 12px 32px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(154, 230, 110, 0.3);
+        }
+
+        .btn-custom-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(154, 230, 110, 0.5);
+        }
+
+        .btn-custom-secondary {
+            background: transparent;
+            color: var(--accent-glow);
+            border: 2px solid var(--accent-glow);
+            padding: 10px 30px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-custom-secondary:hover {
+            background: var(--accent-glow);
+            color: var(--bg-dark);
+        }
+
+        /* Section Styling */
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 3rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-glow) 0%, transparent 100%);
+        }
+
+        /* Card Styling */
+        .card-custom {
+            background: rgba(19, 9, 36, 0.6);
+            border: 1px solid rgba(154, 230, 110, 0.2);
+            border-radius: 15px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .card-custom:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-glow);
+            box-shadow: 0 10px 40px rgba(154, 230, 110, 0.25);
+        }
+
+        /* Skills Grid */
+        .skill-item {
+            background: rgba(19, 9, 36, 0.6);
+            border: 1px solid rgba(154, 230, 110, 0.2);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .skill-item:hover {
+            border-color: var(--accent-glow);
+            box-shadow: 0 0 30px rgba(154, 230, 110, 0.3);
+            transform: translateY(-5px);
+        }
+
+        .skill-icon {
+            font-size: 3rem;
+            color: var(--accent-glow);
+            margin-bottom: 1rem;
+        }
+
+        /* Project Card */
+        .project-card {
+            background: rgba(19, 9, 36, 0.6);
+            border: 1px solid rgba(154, 230, 110, 0.2);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 50px rgba(154, 230, 110, 0.3);
+        }
+
+        .project-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover .project-img {
+            transform: scale(1.1);
+        }
+
+        .project-tag {
+            background: var(--accent-olive);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin-right: 0.5rem;
+        }
+
+        /* Timeline */
+        .timeline-item {
+            position: relative;
+            padding-left: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 3px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--accent-glow) 0%, transparent 100%);
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -8px;
+            top: 0;
+            width: 18px;
+            height: 18px;
+            background: var(--accent-glow);
+            border-radius: 50%;
+            box-shadow: 0 0 15px rgba(154, 230, 110, 0.6);
+        }
+
+        /* Contact Form */
+        .form-control-custom {
+            background: rgba(19, 9, 36, 0.6);
+            border: 1px solid rgba(154, 230, 110, 0.2);
+            color: var(--text-primary);
+            border-radius: 8px;
+            padding: 12px 20px;
+            transition: all 0.3s ease;
+        }
+
+        .form-control-custom:focus {
+            background: rgba(19, 9, 36, 0.8);
+            border-color: var(--accent-glow);
+            box-shadow: 0 0 20px rgba(154, 230, 110, 0.3);
+            outline: none;
+            color: var(--text-primary);
+        }
+
+        /* Social Icons */
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(154, 230, 110, 0.1);
+            border: 1px solid rgba(154, 230, 110, 0.3);
+            border-radius: 50%;
+            color: var(--accent-glow);
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            margin: 0 0.5rem;
+        }
+
+        .social-icon:hover {
+            background: var(--accent-glow);
+            color: var(--bg-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(154, 230, 110, 0.4);
+        }
+
+        /* Scroll to Top Button */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--accent-glow);
+            color: var(--bg-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(154, 230, 110, 0.5);
+        }
+
+        .scroll-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 30px rgba(154, 230, 110, 0.7);
+        }
+
+        /* Footer */
+        .footer {
+            background: rgba(11, 11, 18, 0.95);
+            border-top: 1px solid rgba(154, 230, 110, 0.2);
+            padding: 2rem 0;
+            margin-top: 5rem;
+        }
+
+        /* Certification Badge */
+        .cert-badge {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--accent-olive) 0%, var(--accent-glow) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            margin: 0 auto 1rem;
+            box-shadow: 0 0 30px rgba(154, 230, 110, 0.4);
+        }
+
+        /* #home > div.container > div {
+            margin-top: 1rem;
+            margin-bottom: 1%;
+        } */
+        #home>div.container>div {
+            margin-top: 78px;
+        }
+
+        /* Responsive */
+        @media (max-width: 999px) {
+            /* body > nav {
+                position: relative !important;
+            }
+            #home > div.container > div > div.col-lg-6.order-lg-2.text-center.mb-5.mb-lg-0.aos-init.aos-animate{
+                    margin-bottom: 1.5rem !important;
+                    margin-top: 1.5rem !important;
+                    
+            } */
+        }
+
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .profile-image {
+                width: 230px;
+                height: 230px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+        <div class="container">
+            <a class="navbar-brand text-white fw-bold" href="#"
+                style="font-family: 'Poppins', sans-serif; font-size: 1.5rem;">
+                <span class="glow-text">MW</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                style="border-color: var(--accent-glow);">
+                <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#freelancing">Freelancing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="hero-gradient" style="top: -200px; right: -200px;"></div>
+        <div class="hero-gradient" style="bottom: 30px; left: -200px;"></div>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 order-lg-2 text-center mb-4 mb-lg-0" data-aos="fade-left">
+                    <img src="https://via.placeholder.com/400x400/556B2F/FFFFFF?text=Muhammad+Waqas"
+                        alt="Muhammad Waqas" class="profile-image" id="profileImage">
+                </div>
+                <div class="col-lg-6 order-lg-1" data-aos="fade-right">
+                    <div class="mb-3">
+                        <span style="color: var(--accent-glow); font-weight: 600; font-size: 1.1rem;">Hello,
+                            I'm</span>
+                    </div>
+                    <h1 class="display-3 fw-bold mb-3 glow-text" id="heroName">Muhammad Waqas</h1>
+                    <div class="d-flex align-items-center m-auto "><span style="padding: 5px;"><i
+                                class="fas fa-graduation-cap me-2"></i></span><span class="h3 mb-0 "
+                            style="color: var(--accent-beige);" id="heroRole">Software Engineer & Freelance
+                            Web Developer</span></div>
+                    <p class="lead mb-4" style="color: var(--text-secondary); line-height: 1.8;" id="heroTagline">
+                        "Building reliable, scalable software with Python, Django, and modern web technologies."
+                    </p>
+                    <div class="d-flex flex-wrap gap-3 mb-4">
+                        <a href="#contact" class="btn btn-custom-primary">
+                            <i class="fas fa-envelope me-2"></i>Hire Me
+                        </a>
+                        <a href="#projects" class="btn btn-custom-secondary">
+                            <i class="fas fa-folder-open me-2"></i>View Projects
+                        </a>
+                    </div>
+                    <div class="social-links" id="socialLinks">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-5" id="about">
+        <div class="container">
+            <h2 class="section-title text-center" data-aos="fade-up">About Me</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card-custom">
+                        <p class="lead text-center" style="color: var(--text-secondary); line-height: 1.8;"
+                            id="aboutText">
+                            <!-- Populated by JS -->
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="py-5" id="skills">
+        <div class="container">
+            <h2 class="section-title text-center" data-aos="fade-up">Skills & Technologies</h2>
+            <div class="row g-4" id="skillsGrid">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="py-5" id="projects">
+        <div class="container">
+            <h2 class="section-title text-center" data-aos="fade-up">Featured Projects</h2>
+            <div class="row g-4" id="projectsGrid">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="py-5" id="education">
+        <div class="container">
+            <h2 class="section-title text-center" data-aos="fade-up">Education</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8" data-aos="fade-up" data-aos-delay="100">
+                    <div id="educationTimeline">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section class="py-5" id="certifications">
+        <div class="container">
+            <h2 class="section-title text-center" data-aos="fade-up">Certifications</h2>
+            <div class="row g-4" id="certificationsGrid">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Freelancing Section -->
+    <section class="py-5" id="freelancing">
+        <div class="container">
+            <h2 class="section-title text-center" data-aos="fade-up">Freelancing Experience</h2>
+            <div class="row g-4" id="freelancingGrid">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-5" id="contact">
+        <div class="container">
+            <h2 class="section-title text-center" data-aos="fade-up">Get In Touch</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card-custom">
+                        <form id="contactForm">
+                            <div class="mb-3">
+                                <label class="form-label">Your Name</label>
+                                <input type="text" class="form-control form-control-custom" name="name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Your Email</label>
+                                <input type="email" class="form-control form-control-custom" name="email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Subject</label>
+                                <input type="text" class="form-control form-control-custom" name="subject" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Message</label>
+                                <textarea class="form-control form-control-custom" name="message" rows="5"
+                                    required></textarea>
+                            </div>
+                            <div class="d-flex gap-3 flex-wrap">
+                                <button type="submit" class="btn btn-custom-primary">
+                                    <i class="fas fa-paper-plane me-2"></i>Send Message
+                                </button>
+                                <a href="#" class="btn btn-custom-secondary" id="whatsappBtn">
+                                    <i class="fab fa-whatsapp me-2"></i>WhatsApp
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="text-center">
+                <p style="color: var(--text-secondary);" id="footerText">
+                    © 2024 Muhammad Waqas. All Rights Reserved.
+                </p>
+                <div class="mt-3" id="footerSocials">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <div class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- AOS Animation -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Content JS (Must be loaded first) -->
+    <script src="assets/js/content.js"></script>
+
+    <!-- App JS -->
+    <script src="assets/js/app.js"></script>
+</body>
+
+</html>
