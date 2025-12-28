@@ -62,7 +62,7 @@ function populateContent() {
     document.getElementById('footerText').textContent = `© ${new Date().getFullYear()} ${content.personal.fullName}. All Rights Reserved.`;
 
     // WhatsApp Button
-    document.getElementById('whatsappBtn').href = content.social.whatsapp;
+    // document.getElementById('whatsappBtn').href = content.social.whatsapp;
 }
 
 // ========================================
@@ -75,21 +75,21 @@ function populateSocialLinks() {
 
     const socialHTML = `
         <a href="${social.github}" target="_blank" class="social-icon" title="GitHub">
-            <i class="fab fa-github"></i>
+            <i class="fab fa-github fa-xl"></i>
         </a>
         <a href="${social.linkedin}" target="_blank" class="social-icon" title="LinkedIn">
-            <i class="fab fa-linkedin-in"></i>
+            <i class="fab fa-linkedin fa-xl"></i>
         </a>
         ${social.instagram ? `
             <a href="${social.instagram}" target="_blank" class="social-icon" title="Instagram">
-                <i class="fab fa-instagram"></i>
+                <i class="fab fa-instagram fa-xl"></i>
             </a>
         ` : ''}
         <a href="${social.whatsapp}" target="_blank" class="social-icon" title="WhatsApp">
-            <i class="fab fa-whatsapp"></i>
+            <i class="fab fa-whatsapp fa-xl"></i>
         </a>
         <a href="${social.email}" class="social-icon" title="Email">
-            <i class="fas fa-envelope"></i>
+            <i class="fas fa-envelope fa-xl"></i>
         </a>
     `;
 
@@ -144,11 +144,12 @@ function populateProjects() {
 }
 
 function createProjectCard(project, index, isFeatured) {
-    const colClass = isFeatured ? 'col-lg-12' : 'col-md-6 col-lg-4';
+    const colClass = isFeatured ? 'col-md-6 col-lg-4 ' : 'col-md-6 col-lg-4';
+    const Project_Class = isFeatured ? 'project-card border-4 border border-danger border-opacity-50 ' : 'project-card';
 
     return `
-        <div class="${colClass}" data-aos="fade-up" data-aos-delay="${index * 100}">
-            <div class="project-card">
+        <div class="${colClass}" data-aos="fade-up" data-aos-delay="${index * 50}">
+            <div class="${Project_Class}">
                 <div style="overflow: hidden;">
                     <img src="${project.image}" alt="${project.title}" class="project-img">
                 </div>
@@ -311,31 +312,29 @@ function initScrollEffects() {
 // CONTACT FORM
 // ========================================
 function initContactForm() {
-    const contactForm = document.getElementById('contactForm');
+    // const contactForm = document.getElementById('contactForm');
 
-    contactForm.addEventListener('submit', function (e) {
-        e.preventDefault();
+    // contactForm.addEventListener('submit', async (e) => {
+    //     e.preventDefault();
 
-        const formData = new FormData(contactForm);
-        const name = formData.get('name');
-        const email = formData.get('email');
-        const subject = formData.get('subject');
-        const message = formData.get('message');
+    //     const formData = new FormData(contactForm);
 
-        // Option 1: Using mailto (simple but opens email client)
-        const mailtoLink = `mailto:${portfolioContent.personal.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
+    //     const response = await fetch(contactForm.action, {
+    //         method: "POST",
+    //         body: formData,
+    //         headers: {
+    //             'Accept': 'application/json'
+    //         }
+    //     });
 
-        window.location.href = mailtoLink;
+    //     if (response.ok) {
+    //         alert('Message sent successfully!');
+    //         contactForm.reset();
+    //     } else {
+    //         alert('Failed to send message');
+    //     }
+    // });
 
-        // Option 2: Using FormSubmit.co (uncomment to use)
-        // contactForm.action = "https://formsubmit.co/your-email@example.com";
-        // contactForm.method = "POST";
-        // contactForm.submit();
-
-        // Show success message
-        alert('Thank you for your message! I will get back to you soon.');
-        contactForm.reset();
-    });
 }
 
 // ========================================
