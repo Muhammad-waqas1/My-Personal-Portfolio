@@ -93,7 +93,7 @@ Your site will be live at: `https://your-username.github.io`
 
 Wait 2-5 minutes for initial deployment.
 
-## 📧 Contact Form Setup
+<!-- ## 📧 Contact Form Setup
 
 ### Option 1: Mailto (Default)
 The contact form uses `mailto:` which opens the user's email client. No setup needed.
@@ -110,7 +110,7 @@ The contact form uses `mailto:` which opens the user's email client. No setup ne
 contactForm.action = "https://formsubmit.co/your-email@example.com";
 contactForm.method = "POST";
 contactForm.submit();
-```
+``` -->
 
 ## 🎨 Customization
 
@@ -152,8 +152,8 @@ Free to use for personal portfolios.
 ## 👨‍💻 Author
 **Muhammad Waqas**
 - GitHub: [link](https://github.com/Muhammad-waqas1)
-- LinkedIn: [Your LinkedIn]
+- LinkedIn: [Link](https://www.linkedin.com/in/muhammad-waqas-834490377/)
 
 ---
 
-Built with ❤️ using HTML, CSS, JavaScript, Tailwind CSS & Bootstrap
+⭐ Give this repo a star if you found it useful!
