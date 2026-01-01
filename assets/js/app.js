@@ -150,8 +150,9 @@ function createProjectCard(project, index, isFeatured) {
     return `
         <div class="${colClass}" data-aos="fade-up" data-aos-delay="${index * 50}">
             <div class="${Project_Class}">
-                <div style="overflow: hidden;">
-                    <img src="${project.image}" alt="${project.title}" class="project-img">
+                <div style="overflow: hidden; ">
+
+                    <img src="${project.main_image}" alt="${project.title}" class="project-img">
                 </div>
                 <div style="padding: 1.5rem;">
                     <div class="mb-3">
@@ -171,6 +172,12 @@ function createProjectCard(project, index, isFeatured) {
                                 <i class="fas fa-external-link-alt me-1"></i>Live Demo
                             </a>
                         ` : ''}
+                        <button 
+                            class="btn btn-custom-primary btn-sm"
+                            onclick="openProjectModal(${project.id})">
+                            <i class="fas fa-info-circle me-1"></i>Details
+                        </button>
+
                     </div>
                 </div>
             </div>
@@ -368,6 +375,111 @@ function initSmoothScroll() {
         });
     });
 }
+
+
+
+// Modal Creation main
+function openProjectModal(projectId) {
+    const project = portfolioContent.projects.find(p => p.id === projectId);
+
+    document.getElementById("projectModalTitle").innerText = project.title;
+
+    document.getElementById("projectModalBody").innerHTML = `
+        ${renderProjectImages(project.images)}
+        <h5 class="mt-4">Description</h5>
+        <p class="mt-2">${project.longDescription || ""}</p>
+
+        ${renderList("Key Features", project.keyFeatures)}
+        ${renderTechStack(project.techStack)}
+
+        ${renderuserFlow("User Flow", project.userFlow)}
+        ${renderchallengesSolved("Challenges Solved", project)}
+        ${rendernotes("Notes", project)}
+
+        <div class="mt-4 d-flex gap-2">
+            ${project.github ? `<a href="${project.github}" target="_blank" class="btn btn-dark">GitHub</a>` : ""}
+            ${project.demo ? `<a href="${project.demo}" target="_blank" class="btn btn-primary">Live Demo</a>` : ""}
+        </div>
+    `;
+
+    new bootstrap.Modal(document.getElementById("projectModal")).show();
+}
+
+
+// Image Carousel (multiple images)
+function renderProjectImages(images = []) {
+    if (!images.length) return "";
+
+    return `
+    <div id="projectCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        ${images.map((img, i) => `
+          <div class="carousel-item ${i === 0 ? 'active' : ''}">
+            <img src="${img}" class="d-block w-100 rounded" alt="">
+          </div>
+        `).join("")}
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+    `;
+}
+
+// Features list renderer
+function renderList(title, items = []) {
+    if (!items.length) return "";
+
+    return `
+      <h5 class="mt-4">${title}</h5>
+      <ul class="mt-2">
+        ${items.map(item => `<p>&#10070; ${item}</p>`).join("")}
+      </ul>
+    `;
+}
+
+
+// Tech stack renderer
+function renderTechStack(stack = {}) {
+    return `
+      <h5 class="mt-4">Tech Stack</h5>
+      ${Object.entries(stack).map(([key, values]) => `
+        <p class="mt-2"><strong>${key.toUpperCase()}:</strong> ${values.join(", ")}</p>
+      `).join("")}
+    `;
+}
+
+// userFlow renderer 
+function renderuserFlow(title, items = []) {
+    if (!items.length) return "";
+
+    return `
+      <h5 class="mt-4">${title}</h5>
+      <ul class="mt-2">
+        ${items.map(item => `<p>&#10070; ${item}</p>`).join("")}
+      </ul>
+    `;
+}
+function renderchallengesSolved(title , project) {
+    return `
+      <h5 class="mt-4">${title}</h5>
+      <p class="mt-2">${project.challengesSolved}</p>
+    `;
+}
+function rendernotes(title , project) {
+    return `
+      <h5 class="mt-4">${title}</h5>
+      <p class="mt-2">${project.notes}</p>
+    `;
+}
+
+
+
+
 
 // ========================================
 // TYPING EFFECT (Optional Enhancement)
