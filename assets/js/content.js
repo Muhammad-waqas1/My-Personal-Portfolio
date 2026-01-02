@@ -50,14 +50,14 @@ const portfolioContent = {
             institution: "GCUF Layyah Campus",
             duration: "Sep 2023 - Aug 2025",
             location: "Layyah, Punjab",
-            description: "Currently studying, focusing on full stack web development and machine learning."
+            description: "Completed ADP Computer Science."
         },
         {
             degree: "Intermediate",
             institution: "Govt. Graduate College",
             duration: "May 2021 - May 2023",
             location: "Layyah, Punjab",
-            description: "Completed intermediate education."
+            description: "Completed intermediate Computer Science education."
         },
         {
             degree: "Matriculation",
@@ -116,8 +116,8 @@ const portfolioContent = {
     projects: [
         {
             id: 1,
-            title: "MedBridge – Credentialing & Billing Management System",
-            shortDescription: "Healthcare credentialing and billing platform with automated progress tracking, document management, and PDF generation.",
+            title: "MedBridge",
+            shortDescription: "Credentialing & Billing System - Full Django platform with admin dashboard, credentialing automation, billing workflows, and database-driven backend.",
             description: "A full-stack Django-based healthcare credentialing and billing system designed to streamline provider onboarding, document tracking, and state-ready application generation.",
 
             longDescription: `
@@ -171,8 +171,8 @@ const portfolioContent = {
                 "assets/img/bazaar.png"
             ],
 
-            category: "Django / Healthcare",
-            tags: ["Django", "Healthcare", "Admin Dashboard", "PDF Automation", "Secure Auth"],
+            category: "Django",
+            tags: ["Healthcare", "Admin Panel", "PDF Automation", "Secure Auth"],
 
             github: null,
             demo: null,
@@ -183,8 +183,8 @@ const portfolioContent = {
         },
         {
             id: 2,
-            title: "Bazaar – 3D-Enabled E-commerce Platform",
-            shortDescription: "Django-based eCommerce platform with authentication, order management, email workflows, and optional 3D product visualization.",
+            title: "3D-Based E-commerce Bazaar",
+            shortDescription: "Django-based eCommerce platform with authentication, order management, email workflows, and 3D product visualization.",
             description: "A feature-rich eCommerce web application built using Django, offering standard shopping functionality enhanced with optional 3D product previews for an improved user experience.",
 
             longDescription: `
@@ -232,8 +232,8 @@ The platform supports complete user account management, product browsing, order 
                 "assets/img/bazaar/admin_panel.png"
             ],
 
-            category: "Django / E-commerce",
-            tags: ["Django", "Ecommerce", "3D Products", "Authentication", "Admin Panel"],
+            category: "Django",
+            tags: ["Ecommerce", "3D Products", "Authentication", "Admin Panel"],
 
             notes: "Source code is private due to client confidentiality. Architecture, features, and workflows are demonstrated visually.",
 
@@ -244,8 +244,8 @@ The platform supports complete user account management, product browsing, order 
         },
         {
             id: 3,
-            title: "Fish Counting System – Underwater Object Detection",
-            shortDescription: "YOLOv8-based underwater fish detection and counting system deployed as a Flask web application.",
+            title: "Fish Counting System",
+            shortDescription: "Machine learning powered web application for detecting and counting multiple fish species in underwater images using a custom-trained YOLOv8 model.",
             description: "Machine learning powered web application for detecting and counting multiple fish species in underwater images using a custom-trained YOLOv8 model.",
 
             longDescription: `
@@ -288,8 +288,8 @@ A custom-trained YOLOv8 model was fine-tuned to accurately detect and count 13 d
                 "assets/img/Fish_Counting_System/species_count.png"
             ],
 
-            category: "Machine Learning / Computer Vision",
-            tags: ["YOLOv8", "Computer Vision", "Flask", "Machine Learning"],
+            category: "Machine Learning",
+            tags: ["YOLOv8", "Flask", "Fine-Tune", "Kaggle"],
 
             github: "https://github.com/Muhammad-waqas1/Fish_Counting_System--Image_Based_Fish_Detection",
             demo: null,
@@ -300,8 +300,8 @@ A custom-trained YOLOv8 model was fine-tuned to accurately detect and count 13 d
         },
         {
             id: 4,
-            title: "DocuGenAI – AI-Powered Documentation Generator",
-            shortDescription: "SaaS web application that automatically generates professional project documentation using AI.",
+            title: "DocuGenAI",
+            shortDescription: "AI-Powered Documentation Generator - Web application using Flask and APIs to generate structured documentation or Readme suitable for developers.",
             description: "AI-powered SaaS platform that transforms minimal project inputs into complete, well-structured technical documentation with web preview and DOCX export.",
 
             longDescription: `
@@ -345,8 +345,8 @@ The platform allows users to input basic project details and instantly generate 
                 "assets/img/DocuGenAI/download.png"
             ],
 
-            category: "Flask / SaaS / AI",
-            tags: ["Flask", "SaaS", "AI", "OpenAI API", "Automation"],
+            category: "Flask",
+            tags: ["API", "Documentation", "Automation"],
 
             github: null,
             demo: null,
@@ -357,7 +357,7 @@ The platform allows users to input basic project details and instantly generate 
         },
         {
             id: 5,
-            title: "LifeLink – Human Organ Donation System",
+            title: "LifeLink",
             shortDescription: "Django-based platform connecting organ donors, recipients, and medical institutions with real-time availability tracking.",
             description: "A comprehensive web platform built with Django to facilitate organ donation and transplantation by managing donors, recipients, and organ availability.",
 
@@ -404,8 +404,8 @@ The platform enables donors to register their willingness to donate organs, reci
                 "assets/img/Organ_Donation/admin.png"
             ],
 
-            category: "Django / Healthcare",
-            tags: ["Django", "Healthcare", "Database Management", "Authentication"],
+            category: "Django",
+            tags: ["Healthcare", "DBMS", "Authentication", "Admin Panel"],
 
             github: null,
             demo: null,
@@ -416,7 +416,7 @@ The platform enables donors to register their willingness to donate organs, reci
         },
         {
             id: 6,
-            title: "ExamiGo – Educational Resource & Past Papers Platform",
+            title: "ExamiGo - Educational Platform",
             shortDescription: "Django-based educational platform providing categorized past exam papers for students across Punjab boards.",
             description: "An educational web application built with Django that allows students to access and explore past examination papers from multiple educational boards.",
 
@@ -460,8 +460,8 @@ The application organizes past papers by board and category, offering a simple a
                 "assets/img/ExamiGo/contact.png"
             ],
 
-            category: "Django / Education",
-            tags: ["Django", "Education", "Templates", "Backend"],
+            category: "Django",
+            tags: ["Education", "Web", "UI/UX", "Backend"],
 
             github: null,
             demo: null,
@@ -473,7 +473,7 @@ The application organizes past papers by board and category, offering a simple a
         {
             id: 7,
             title: "YouTube Downloader & Converter",
-            shortDescription: "Python desktop application for downloading YouTube videos and extracting audio using a modern GUI.",
+            shortDescription: "Python desktop application for downloading YouTube videos and extracting audio using Tkinter.",
             description: "A Python-based desktop utility built with Tkinter to download YouTube videos and convert them to MP3 using yt-dlp and FFmpeg.",
 
             longDescription: `
@@ -515,8 +515,8 @@ The application provides a modern graphical interface, real-time progress tracki
                 "assets/img/YouTube_Downloader_Converter/files.png"
             ],
 
-            category: "Python / Desktop Application",
-            tags: ["Python", "Tkinter", "Automation", "Desktop App"],
+            category: "Python",
+            tags: ["GUI App", "Tkinter", "Automation", "Desktop App"],
 
             github: "https://github.com/Muhammad-waqas1/YouTube-Downloader-and-Converter",
             demo: null,
@@ -568,8 +568,8 @@ The application focuses on usability, clear feedback, and reliability, making it
                 "assets/img/PDF_Merger/success.png"
             ],
 
-            category: "Python / Desktop Application",
-            tags: ["Python", "Tkinter", "PDF Processing", "Utilities"],
+            category: "Python",
+            tags: ["GUI App", "Tkinter", "PDF Processing", "Utilities"],
 
             github: null,
             demo: null,

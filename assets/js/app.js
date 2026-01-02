@@ -107,7 +107,7 @@ function populateSkills() {
     let skillsHTML = '';
     skills.forEach((skill, index) => {
         skillsHTML += `
-            <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="${index * 50}">
+            <div class="col-6 col-md-3 col-lg-3" data-aos="fade-up" data-aos-delay="${index * 50}">
                 <div class="skill-item">
                     <i class="${skill.icon} skill-icon"></i>
                     <h5 style="color: var(--text-primary); font-size: 1rem; margin: 0;">${skill.name}</h5>
@@ -160,20 +160,20 @@ function createProjectCard(project, index, isFeatured) {
                         ${project.tags.slice(0, 2).map(tag => `<span class="project-tag" style="background: rgba(154, 230, 110, 0.2); color: var(--accent-glow);">${tag}</span>`).join('')}
                     </div>
                     <h4 style="color: var(--text-primary); margin-bottom: 1rem;">${project.title}</h4>
-                    <p style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">${project.description}</p>
+                    <p style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">${project.shortDescription}</p>
                     <div class="d-flex gap-2 flex-wrap">
                         ${project.github ? `
-                            <a href="${project.github}" target="_blank" class="btn btn-custom-secondary btn-sm">
+                            <a href="${project.github}" target="_blank" class="btn btn-custom-secondary ">
                                 <i class="fab fa-github me-1"></i>Code
                             </a>
                         ` : ''}
                         ${project.demo ? `
-                            <a href="${project.demo}" target="_blank" class="btn btn-custom-primary btn-sm">
+                            <a href="${project.demo}" target="_blank" class="btn btn-custom-primary">
                                 <i class="fas fa-external-link-alt me-1"></i>Live Demo
                             </a>
                         ` : ''}
                         <button 
-                            class="btn btn-custom-primary btn-sm"
+                            class="btn btn-custom-primary"
                             onclick="openProjectModal(${project.id})">
                             <i class="fas fa-info-circle me-1"></i>Details
                         </button>
@@ -421,10 +421,10 @@ function renderProjectImages(images = []) {
       </div>
 
       <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon"></span>
+        <span class="carousel-control-prev-icon" style="background-color: black;"></span>
       </button>
       <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon"></span>
+        <span class="carousel-control-next-icon" style="background-color: black;"></span>
       </button>
     </div>
     `;
@@ -488,8 +488,8 @@ function typingEffect() {
     const roles = [
         "Fullstack Web Developer",
         "Python Developer",
-        "Software Engineer",
-        "Django Developer"
+        // "Software Engineer",
+        "Django Developer",
     ];
 
     let roleIndex = 0;
