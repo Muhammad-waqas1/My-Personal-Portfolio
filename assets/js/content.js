@@ -99,7 +99,7 @@ const portfolioContent = {
             platform: "Freelance",
             role: "Python Developer",
             description: "Developed backend systems and utilities using Django, Flask and Tkinter. Created API-driven platforms and GUIs for credentialing, document generation, automation tools and bot creation.",
-            skills: ["Python", "Tkinter", "Selenium", "BeautifulSoap", "APIs", "MySQL"],
+            skills: ["Python", "Tkinter", "ttkbootstrap", "requests", "Selenium", "BeautifulSoap", "APIs", "shutil","pyautogui"],
             link: "#contact"
         },
         {

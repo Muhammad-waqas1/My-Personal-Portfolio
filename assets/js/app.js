@@ -154,13 +154,13 @@ function createProjectCard(project, index, isFeatured) {
 
                     <img src="${project.main_image}" alt="${project.title}" class="project-img">
                 </div>
-                <div style="padding: 1.5rem;">
+                <div style="padding: 1rem;">
                     <div class="mb-3">
                         <span class="project-tag">${project.category}</span>
                         ${project.tags.slice(0, 2).map(tag => `<span class="project-tag" style="background: rgba(154, 230, 110, 0.2); color: var(--accent-glow);">${tag}</span>`).join('')}
                     </div>
                     <h4 style="color: var(--text-primary); margin-bottom: 1rem;">${project.title}</h4>
-                    <p style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">${project.shortDescription}</p>
+                    <p style="color: var(--text-secondary); line-height: 1.5; margin-bottom: 1.5rem;">${project.shortDescription}</p>
                     <div class="d-flex gap-2 flex-wrap">
                         ${project.github ? `
                             <a href="${project.github}" target="_blank" class="btn btn-custom-secondary ">
@@ -262,7 +262,7 @@ function populateFreelancing() {
                         <span class="project-tag">${work.platform}</span>
                     </div>
                     <h4 style="color: var(--accent-glow); margin-bottom: 1rem;">${work.role}</h4>
-                    <p style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 1rem;">${work.description}</p>
+                    <p style="color: var(--text-secondary); line-height: 1.5; margin-bottom: 1rem;">${work.description}</p>
                     <div class="mb-3">
                         ${work.skills.map(skill => `<span class="badge" style="background: rgba(154, 230, 110, 0.2); color: var(--accent-glow); margin-right: 0.5rem; margin-bottom: 0.5rem;">${skill}</span>`).join('')}
                     </div>
